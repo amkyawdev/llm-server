@@ -1,0 +1,53 @@
+# Core Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# LLM and Model Loading
+torch>=2.1.0
+transformers>=4.35.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0
+peft>=0.7.0
+
+# Tokenization
+tokenizers>=0.15.0
+
+# Configuration Management
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+pyyaml>=6.0.1
+
+# Caching and Performance
+redis>=5.0.0
+diskcache>=5.6.0
+
+# Authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Rate Limiting
+slowapi>=0.1.9
+
+# Logging
+python-json-logger>=2.0.7
+loguru>=0.7.2
+
+# Metrics and Monitoring
+prometheus-client>=0.19.0
+
+# Utilities
+python-dotenv>=1.0.0
+httpx>=0.25.0
+aiofiles>=23.2.1
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+httpx>=0.25.0
+
+# Development
+black>=23.11.0
+isort>=5.12.0
+mypy>=1.7.0

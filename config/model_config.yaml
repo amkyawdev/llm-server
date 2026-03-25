@@ -1,0 +1,82 @@
+# Model Configuration YAML
+# This file contains configuration for different LLM models
+
+models:
+  llama-2-7b:
+    name: "llama-2-7b"
+    path: "meta-llama/Llama-2-7b-hf"
+    tokenizer: "meta-llama/Llama-2-7b-hf"
+    max_length: 4096
+    quantization:
+      enabled: true
+      bits: 4
+      compute_dtype: "float16"
+    generation_defaults:
+      temperature: 0.7
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      max_new_tokens: 512
+
+  llama-2-13b:
+    name: "llama-2-13b"
+    path: "meta-llama/Llama-2-13b-hf"
+    tokenizer: "meta-llama/Llama-2-13b-hf"
+    max_length: 4096
+    quantization:
+      enabled: true
+      bits: 4
+      compute_dtype: "float16"
+    generation_defaults:
+      temperature: 0.7
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      max_new_tokens: 512
+
+  mistral-7b:
+    name: "mistral-7b"
+    path: "mistralai/Mistral-7B-v0.1"
+    tokenizer: "mistralai/Mistral-7B-v0.1"
+    max_length: 8192
+    quantization:
+      enabled: true
+      bits: 4
+      compute_dtype: "float16"
+    generation_defaults:
+      temperature: 0.7
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      max_new_tokens: 512
+
+  # Embedding models
+  bge-small-en-v1.5:
+    name: "bge-small-en-v1.5"
+    path: "BAAI/bge-small-en-v1.5"
+    max_length: 512
+    embedding_dimension: 384
+    is_embedding_model: true
+
+  bge-base-en-v1.5:
+    name: "bge-base-en-v1.5"
+    path: "BAAI/bge-base-en-v1.5"
+    max_length: 512
+    embedding_dimension: 768
+    is_embedding_model: true
+
+# Default model settings
+default_model: "llama-2-7b"
+
+# Model loading settings
+loading:
+  use_cache: true
+  trust_remote_code: false
+  low_cpu_mem_usage: true
+  device_map: "auto"
+
+# Inference settings
+inference:
+  batch_size: 8
+  use_gpu: true
+  compile_model: false
