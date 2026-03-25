@@ -17,8 +17,11 @@ router = APIRouter(prefix="/chat", tags=["chat"])
 class ChatRequestPayload(BaseModel):
     """Chat request payload."""
 
-    messages: List[dict] = Field(
-        ..., description="List of message objects with 'role' and 'content'"
+    messages: Optional[List[dict]] = Field(
+        None, description="List of message objects with 'role' and 'content'"
+    )
+    prompt: Optional[str] = Field(
+        None, description="Input prompt (alternative to messages)"
     )
     model: Optional[str] = Field(None, description="Model name to use")
     temperature: float = Field(0.7, ge=0.0, le=2.0, description="Sampling temperature")
@@ -110,10 +113,18 @@ async def chat_completions(request: ChatRequestPayload):
     try:
         chat_service = ChatService()
         
+        # Convert prompt to messages format if provided
+        messages = request.messages
+        if request.prompt and not messages:
+            messages = [{"role": "user", "content": request.prompt}]
+        
+        if not messages:
+            raise HTTPException(status_code=400, detail="Either 'messages' or 'prompt' is required")
+        
         if request.stream:
             return StreamingResponse(
                 chat_service.stream_chat(
-                    messages=request.messages,
+                    messages=messages,
                     model=request.model,
                     temperature=request.temperature,
                     max_tokens=request.max_tokens,
@@ -123,7 +134,7 @@ async def chat_completions(request: ChatRequestPayload):
             )
         
         result = await chat_service.chat(
-            messages=request.messages,
+            messages=messages,
             model=request.model,
             temperature=request.temperature,
             max_tokens=request.max_tokens,
