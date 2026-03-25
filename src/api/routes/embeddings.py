@@ -83,6 +83,7 @@ async def list_embedding_models(
     return {
         "object": "list",
         "data": [
+            # BGE series (BAAI)
             {
                 "id": "bge-small-en-v1.5",
                 "object": "model",
@@ -96,6 +97,133 @@ async def list_embedding_models(
                 "created": 1699481848,
                 "owned_by": "BAAI",
                 "embedding_dimension": 768,
+            },
+            {
+                "id": "bge-large-en-v1.5",
+                "object": "model",
+                "created": 1699481848,
+                "owned_by": "BAAI",
+                "embedding_dimension": 1024,
+            },
+            # BGE multilingual
+            {
+                "id": "bge-multilingual-gemma-xl",
+                "object": "model",
+                "created": 1711974800,
+                "owned_by": "BAAI",
+                "embedding_dimension": 1024,
+            },
+            # E5 series
+            {
+                "id": "e5-small-v2",
+                "object": "model",
+                "created": 1689292800,
+                "owned_by": "microsoft",
+                "embedding_dimension": 384,
+            },
+            {
+                "id": "e5-base-v2",
+                "object": "model",
+                "created": 1689292800,
+                "owned_by": "microsoft",
+                "embedding_dimension": 768,
+            },
+            {
+                "id": "e5-large-v2",
+                "object": "model",
+                "created": 1689292800,
+                "owned_by": "microsoft",
+                "embedding_dimension": 1024,
+            },
+            # sentence-transformers
+            {
+                "id": "all-MiniLM-L6-v2",
+                "object": "model",
+                "created": 1672531200,
+                "owned_by": "sentence-transformers",
+                "embedding_dimension": 384,
+            },
+            {
+                "id": "all-mpnet-base-v2",
+                "object": "model",
+                "created": 1672531200,
+                "owned_by": "sentence-transformers",
+                "embedding_dimension": 768,
+            },
+            {
+                "id": "all-MiniLM-L12-v2",
+                "object": "model",
+                "created": 1672531200,
+                "owned_by": "sentence-transformers",
+                "embedding_dimension": 384,
+            },
+            # OpenAI
+            {
+                "id": "text-embedding-3-small",
+                "object": "model",
+                "created": 1709596800,
+                "owned_by": "openai",
+                "embedding_dimension": 1536,
+            },
+            {
+                "id": "text-embedding-3-large",
+                "object": "model",
+                "created": 1709596800,
+                "owned_by": "openai",
+                "embedding_dimension": 3072,
+            },
+            {
+                "id": "text-embedding-ada-002",
+                "object": "model",
+                "created": 1672531200,
+                "owned_by": "openai",
+                "embedding_dimension": 1536,
+            },
+            # Cohere
+            {
+                "id": "embed-english-v3.0",
+                "object": "model",
+                "created": 1704067200,
+                "owned_by": "cohere",
+                "embedding_dimension": 1024,
+            },
+            {
+                "id": "embed-multilingual-v3.0",
+                "object": "model",
+                "created": 1704067200,
+                "owned_by": "cohere",
+                "embedding_dimension": 1024,
+            },
+            # Google
+            {
+                "id": "gemini-embedding-001",
+                "object": "model",
+                "created": 1704067200,
+                "owned_by": "google",
+                "embedding_dimension": 768,
+            },
+            # Nvidia
+            {
+                "id": "nvidia-embed-qa-1",
+                "object": "model",
+                "created": 1711974800,
+                "owned_by": "nvidia",
+                "embedding_dimension": 1024,
+            },
+            # Voyage
+            {
+                "id": "voyage-01",
+                "object": "model",
+                "created": 1704067200,
+                "owned_by": "voyageai",
+                "embedding_dimension": 1024,
+            },
+            {
+                "id": "voyage-multilingual-01",
+                "object": "model",
+                "created": 1709596800,
+                "owned_by": "voyageai",
+                "embedding_dimension": 1024,
             },
         ],
     }

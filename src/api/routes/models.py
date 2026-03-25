@@ -37,6 +37,7 @@ async def list_models():
     """
     # Return a list of known models
     models = [
+        # Llama series
         ModelInfo(
             id="llama-2-7b",
             created=1699481848,
@@ -48,9 +49,137 @@ async def list_models():
             owned_by="meta",
         ),
         ModelInfo(
+            id="llama-3-8b",
+            created=1711974800,
+            owned_by="meta",
+        ),
+        ModelInfo(
+            id="llama-3.1-8b",
+            created=1711974800,
+            owned_by="meta",
+        ),
+        ModelInfo(
+            id="llama-3.2-1b",
+            created=1711974800,
+            owned_by="meta",
+        ),
+        ModelInfo(
+            id="llama-3.2-3b",
+            created=1711974800,
+            owned_by="meta",
+        ),
+        # Mistral series
+        ModelInfo(
             id="mistral-7b",
             created=1700000000,
             owned_by="mistralai",
+        ),
+        ModelInfo(
+            id="mistral-7b-instruct",
+            created=1700000000,
+            owned_by="mistralai",
+        ),
+        ModelInfo(
+            id="mistral-small",
+            created=1704067200,
+            owned_by="mistralai",
+        ),
+        ModelInfo(
+            id="mistral-large",
+            created=1704067200,
+            owned_by="mistralai",
+        ),
+        # Google Gemma
+        ModelInfo(
+            id="gemma-2b",
+            created=1709596800,
+            owned_by="google",
+        ),
+        ModelInfo(
+            id="gemma-7b",
+            created=1709596800,
+            owned_by="google",
+        ),
+        ModelInfo(
+            id="gemma-2-2b",
+            created=1711974800,
+            owned_by="google",
+        ),
+        ModelInfo(
+            id="gemma-2-9b",
+            created=1711974800,
+            owned_by="google",
+        ),
+        # Microsoft Phi
+        ModelInfo(
+            id="phi-3-mini-4k",
+            created=1711974800,
+            owned_by="microsoft",
+        ),
+        ModelInfo(
+            id="phi-3-mini-128k",
+            created=1711974800,
+            owned_by="microsoft",
+        ),
+        ModelInfo(
+            id="phi-3.5-mini",
+            created=1711974800,
+            owned_by="microsoft",
+        ),
+        ModelInfo(
+            id="phi-3.5-moe",
+            created=1711974800,
+            owned_by="microsoft",
+        ),
+        # Qwen
+        ModelInfo(
+            id="qwen-2-0.5b",
+            created=1711974800,
+            owned_by="alibaba",
+        ),
+        ModelInfo(
+            id="qwen-2-1.5b",
+            created=1711974800,
+            owned_by="alibaba",
+        ),
+        ModelInfo(
+            id="qwen-2-7b",
+            created=1711974800,
+            owned_by="alibaba",
+        ),
+        ModelInfo(
+            id="qwen-2-72b",
+            created=1711974800,
+            owned_by="alibaba",
+        ),
+        # Falcon
+        ModelInfo(
+            id="falcon-7b",
+            created=1689292800,
+            owned_by="tii",
+        ),
+        ModelInfo(
+            id="falcon-40b",
+            created=1689292800,
+            owned_by="tii",
+        ),
+        # OpenChat
+        ModelInfo(
+            id="openchat-7b",
+            created=1689292800,
+            owned_by="openchat",
+        ),
+        # StableLM
+        ModelInfo(
+            id="stablelm-3b",
+            created=1704067200,
+            owned_by="stabilityai",
+        ),
+        # RedPajama
+        ModelInfo(
+            id="redpajama-7b",
+            created=1689292800,
+            owned_by="together",
         ),
     ]
     
